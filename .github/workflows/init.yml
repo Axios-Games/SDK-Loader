@@ -1,0 +1,29 @@
+name: Initialize
+
+# Controls when the workflow will run
+on:
+    workflow_dispatch:
+jobs:
+  Init:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Run Init.sh script
+        env:
+         REPO_NAME: ${{ github.event.repository.name }}
+         OWNER_NAME: ${{ github.repository_owner }}
+        run: |
+         chmod +x ./Init.sh
+         ./Init.sh "${OWNER_NAME}" "${REPO_NAME}"
+        
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+         message: Initialized Package
+         committer_name: GitHub Actions
+         committer_email: 41898282+github-actions[bot]@users.noreply.github.com
