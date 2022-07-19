@@ -1,8 +1,8 @@
 {
-    "name": "Organization.Package.Editor",
+    "name": "AxiosGames.SDKLoader.Editor",
     "rootNamespace": "",
     "references": [
-        "Organization.Package"
+        "AxiosGames.SDKLoader"
     ],
     "includePlatforms": [
         "Editor"

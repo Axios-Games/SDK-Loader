@@ -1,5 +1,5 @@
 {
-  "name": "com.organization.package",
+  "name": "com.axiosgames.sdkloader",
   "version": "1.0.0",
-  "displayName": "Package"
+  "displayName": "SDK Loader"
 }
