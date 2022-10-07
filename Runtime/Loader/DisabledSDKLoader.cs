@@ -50,7 +50,7 @@ namespace Axios.SDK
             throw new System.NotImplementedException();
         }
 
-        protected override bool HasValidConfiguration()
+        public override bool ValidateConfiguration()
         {
             return false;
         }
