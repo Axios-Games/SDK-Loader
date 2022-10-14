@@ -18,7 +18,30 @@ namespace Axios.SDK
         public Settings GameAnalyticsSetting;
         public override string SDKName => "GameAnalytics SDK";
 
-
+        public override async Task Init(int timeoutSeconds, CancellationToken cancellationToken)
+        {
+            _status = RuntimeSdkStatus.Starting;
+            
+            if (cancellationToken.IsCancellationRequested)
+            {
+                _status = RuntimeSdkStatus.Stopped;
+                return;
+            }
+            
+            GameAnalytics.Initialize();
+            await Task.Yield();
+            _status = RuntimeSdkStatus.Initialized;
+            Debug.Log($"[SDK Loader] {SDKName} Initialization Complete");
+        }
+        public override  async Task Stop()
+        {
+            GameAnalytics.SetEnabledEventSubmission(false);
+            GameAnalytics.EndSession();
+            _status = RuntimeSdkStatus.Stopped;
+            await Task.Yield();
+        }
+        
+        #if UNITY_EDITOR
         public override bool ValidateConfiguration()
         {
             if (GameAnalyticsSetting == null || GameAnalyticsSetting.Platforms == null || GameAnalyticsSetting.Platforms.Count == 0) 
@@ -40,39 +63,9 @@ namespace Axios.SDK
                     (EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows || 
                      EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows64 ) && hasValidKeys) return true;
             }
-
             return false;
-            
         }
-
-        public override async Task Init(int timeoutSeconds, CancellationToken cancellationToken)
-        {
-            _status = RuntimeSdkStatus.Starting;
-            if (!ValidateConfiguration())
-            {
-                Debug.LogError($"[SDK Loader] {SDKName} has invalid configuration and won't be initialized.");
-                _status = RuntimeSdkStatus.Failed;
-                return;
-            }
-            
-            if (cancellationToken.IsCancellationRequested)
-            {
-                _status = RuntimeSdkStatus.Stopped;
-                return;
-            }
-            
-            GameAnalytics.Initialize();
-            await Task.Yield();
-            _status = RuntimeSdkStatus.Initialized;
-            Debug.Log($"[SDK Loader] {SDKName} Initialization Complete");
-        }
-        public override  async Task Stop()
-        {
-            GameAnalytics.SetEnabledEventSubmission(false);
-            GameAnalytics.EndSession();
-            _status = RuntimeSdkStatus.Stopped;
-            await Task.Yield();
-        }
+        #endif
     }
 
 #elif UNITY_EDITOR
