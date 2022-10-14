@@ -14,7 +14,9 @@ namespace Axios.SDK
         public abstract string SDKName { get; }
         public abstract Task Init(int timeoutSeconds, CancellationToken cancellationToken);
         public abstract Task Stop();
+        #if UNITY_EDITOR
         public abstract bool ValidateConfiguration();
+        #endif
         private void OnDisable() => Reset();
         protected void Reset()
         {
