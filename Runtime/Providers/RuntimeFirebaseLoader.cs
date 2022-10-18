@@ -1,11 +1,7 @@
-using System.IO;
-
 namespace Axios.SDK
 {
     #if FIREBASE_SDK_ENABLED
-    using System;
     using UnityEngine;
-    using System.Collections;
     using Firebase;
     using System.Threading;
     using System.Threading.Tasks;
@@ -52,9 +48,9 @@ namespace Axios.SDK
         public override bool ValidateConfiguration()
         {
             #if UNITY_ANDROID
-            return  File.Exists("Assets/Resources/google-services.json");
+            return  System.IO.File.Exists("Assets/Resources/google-services.json");
             #elif UNITY_IOS
-            return  File.Exists("Assets/Resources/GoogleService-Info.plist");
+            return  System.IO.File.Exists("Assets/Resources/GoogleService-Info.plist");
             #else
             return false;
             #endif

@@ -2,7 +2,6 @@ namespace Axios.SDK
 {
     #if FACEBOOK_SDK_ENABLED
     using System;
-    using System.Collections;
     using Facebook.Unity;
     using Facebook.Unity.Settings;
     using UnityEngine;

@@ -1,5 +1,3 @@
-
-
 namespace Axios.SDK
 {
     #if BYTEBREW_SDK_ENABLED
@@ -7,8 +5,6 @@ namespace Axios.SDK
     using ByteBrewSDK;
     using System.Threading;
     using System.Threading.Tasks;
-
-
 
     [CreateAssetMenu(fileName = "RuntimeByteBrewLoader", menuName = "SDK/ByteBrew SDK", order = 100)]
     public class RuntimeByteBrewLoader : RuntimeSDKLoader

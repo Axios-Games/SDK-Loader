@@ -1,5 +1,3 @@
-
-
 namespace Axios.SDK
 {
     #if MAX_SDK_ENABLED

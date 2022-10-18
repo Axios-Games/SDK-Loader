@@ -1,11 +1,10 @@
-using System.Threading;
-
 namespace Axios.SDK
 {
     #if DIVE_SDK_ENABLED
     using UnityEngine;
     using Dive;
     using System.Threading.Tasks;
+    using System.Threading;
 
     [CreateAssetMenu(fileName = "RuntimeDiveLoader", menuName = "SDK/Dive SDK", order = 100)]
     public class RuntimeDiveLoader : RuntimeSDKLoader
