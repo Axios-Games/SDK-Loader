@@ -1,15 +1,15 @@
 {
     "name": "AxiosGames.SDKLoader.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Axios.SDK",
     "references": [
-        "AxiosGames.SDKLoader"
+        "GUID:a792a98ff7e6c4337b4736f49e13e453"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
+    "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],

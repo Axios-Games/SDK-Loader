@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734fec88209c15044a88e341902aa96e, type: 3}
+  m_Name: RuntimeGameAnalyticsLoader
+  m_EditorClassIdentifier: 
+  _status: 2
+  _runInEditor: 1
+  GameAnalyticsSetting: {fileID: 11400000, guid: 76595c1d6355ad44ab64448cc7074e1e, type: 2}

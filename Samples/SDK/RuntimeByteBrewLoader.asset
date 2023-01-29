@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd20870482f4d0d4dadd996a1bf949ea, type: 3}
+  m_Name: RuntimeByteBrewLoader
+  m_EditorClassIdentifier: 
+  _status: 0
+  _runInEditor: 0
+  _byteBrewSettings: {fileID: 11400000, guid: 03ec3b3a7afce4e83ab20d1899067848, type: 2}

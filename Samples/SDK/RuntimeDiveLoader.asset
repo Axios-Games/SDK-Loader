@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec69ccf8a6495149b9a8d669e408b46, type: 3}
+  m_Name: RuntimeDiveLoader
+  m_EditorClassIdentifier: 
+  _status: 0
+  _runInEditor: 1
+  _appToken: cc326318-7783-404f-83e5-7220bb34b960
+  _hashKey: BA5CD33AB19A567B8F24A
+  _analyticsUrl: https://analyticstest.dive.games/game1
+  _apiUrl: https://apitest.dive.games/
+  _showInfoLogs: 1
+  _debugBuildEnvironment: 1
+  _releaseBuildEnvironment: 1
